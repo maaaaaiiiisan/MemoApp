@@ -37,7 +37,7 @@ class CircleButton extends React.Component {
       <View style={[styles.circluButton, style, { backgroundColor: bgColor }]}>
         {
         this.state.fontLoaded ? (
-          <CustomIcon name={name}style={[styles.circleButtonTitle, { color: textColor }]} />
+          <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
         ) : null
       }
       </View>
