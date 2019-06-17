@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
+
 import { createIconSet } from '@expo/vector-icons';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 import fontAwesome from '../../assets/fonts/fa-solid-900.ttf';
 
 const CustomIcon = createIconSet({
+  check: '\uf00c',
   pencil: '\uf303',
   plus: '\uf067',
 }, 'FontAwesome');
@@ -22,8 +24,7 @@ class CircleButton extends React.Component {
   }
 
   render() {
-    const { name, style, color } = this.props;
-
+    const { name, style, color, onPress } = this.props;
 
     let bgColor = '#E31676';
     let textColor = '#fff';
@@ -34,29 +35,30 @@ class CircleButton extends React.Component {
     }
 
     return (
-      <View style={[styles.circluButton, style, { backgroundColor: bgColor }]}>
-        {
-        this.state.fontLoaded ? (
-          <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
-        ) : null
-      }
-      </View>
+      <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor="transparent">
+        <View style={[styles.circluButton, { backgroundColor: bgColor }]}>
+          {
+            this.state.fontLoaded ? (
+              <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
+            ) : null
+          }
+        </View>
+      </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: 64,
-    height: 64,
+    width: 48,
+    height: 48,
     position: 'absolute',
-    bottom: 24,
-    right: 24,
+    bottom: 32,
+    right: 32,
   },
   circleButton: {
     width: 48,
     height: 48,
-    margin: 8,
     borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
@@ -64,7 +66,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    elevation: 4,
   },
   circleButtonTitle: {
     fontFamily: 'FontAwesome',
