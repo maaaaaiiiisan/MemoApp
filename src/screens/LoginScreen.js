@@ -9,6 +9,22 @@ class LoginScreen extends React.Component {
     password: '',
   }
 
+  // eslint-disable-next-line
+  handleSubmit() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyCZQBC4gzylGTgj8jtfpgQN0FTp2OGQCQI",
+    authDomain: "mymemoapp-ce1fa.firebaseapp.com",
+    databaseURL: "https://mymemoapp-ce1fa.firebaseio.com",
+    projectId: "mymemoapp-ce1fa",
+    storageBucket: "mymemoapp-ce1fa.appspot.com",
+    messagingSenderId: "748624625797",
+    appId: "1:748624625797:web:91a1d1df084fd6a8"
+  };
+
+    //  this.props.navigation.navigate('Home')
+  // Log in()
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -36,7 +52,7 @@ class LoginScreen extends React.Component {
           placeholder="Password"
           secureTextEntry
         />
-        <TouchableHighlight style={styles.button} onPress={() => { this.props.navigation.navigate('Home'); }} underlayColor="#C70f66">
+      <TouchableHighlight style={styles.button} onPress={this.handleSubmit.bind(this)} underlayColor="#C70f66">
           <Text style={styles.buttonTitle}>ログインする</Text>
         </TouchableHighlight>
       </View>
