@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet, View, Text, TextInput, TouchableHighlight,
 } from 'react-native';
+import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
   state = {
@@ -11,16 +12,16 @@ class LoginScreen extends React.Component {
 
   // eslint-disable-next-line
   handleSubmit() {
-  const firebaseConfig = {
-    apiKey: "AIzaSyCZQBC4gzylGTgj8jtfpgQN0FTp2OGQCQI",
-    authDomain: "mymemoapp-ce1fa.firebaseapp.com",
-    databaseURL: "https://mymemoapp-ce1fa.firebaseio.com",
-    projectId: "mymemoapp-ce1fa",
-    storageBucket: "mymemoapp-ce1fa.appspot.com",
-    messagingSenderId: "748624625797",
-    appId: "1:748624625797:web:91a1d1df084fd6a8"
-  };
-
+    const firebaseConfig = {
+      apiKey: 'AIzaSyCZQBC4gzylGTgj8jtfpgQN0FTp2OGQCQI',
+      authDomain: 'mymemoapp-ce1fa.firebaseapp.com',
+      databaseURL: 'https://mymemoapp-ce1fa.firebaseio.com',
+      projectId: 'mymemoapp-ce1fa',
+      storageBucket: 'mymemoapp-ce1fa.appspot.com',
+      messagingSenderId: '748624625797',
+      appId: '1:748624625797:web:91a1d1df084fd6a8'
+    };
+    firebase.initializeApp(config);
     //  this.props.navigation.navigate('Home')
   // Log in()
   }
