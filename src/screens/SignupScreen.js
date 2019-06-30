@@ -28,9 +28,9 @@ class SignupScreen extends React.Component {
         </Text>
         <TextInput
           style={styles.input}
-          value="Email Adress"
+          value={this.state.email}
           onChangeText={(text) => {
-            this.setState({email: text});
+            this.setState({ email: text });
           }}
           autoCapitalize="none"
           autoCorrect={false}
@@ -38,9 +38,9 @@ class SignupScreen extends React.Component {
         />
         <TextInput
           style={styles.input}
-          value="Password"
+          value={this.state.password}
           onChangeText={(text) => {
-            this.setState({password: text });
+            this.setState({ password: text });
           }}
           autoCapitalize="none"
           autoCorrect={false}
