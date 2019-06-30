@@ -8,7 +8,7 @@ import SignupScreen from './src/screens/SignupScreen';
 
 import ENV from './env.json';
 
-const firebaseConfig = {
+const config = {
   apiKey: ENV.FIREBASE_API_KEY,
   authDomain: ENV.FIREBASE_AUTH_DOMAIN,
   databaseURL: ENV.FIREBASE_DB_URL,
